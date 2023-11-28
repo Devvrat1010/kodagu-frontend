@@ -20,7 +20,7 @@ const taskCompleted=(e)=>{
             return res.json()
         }
     })
-    window.location.href=root+"myTasks.html"
+    window.location.href=root+"createdTasks.html"
     return
 }
 
