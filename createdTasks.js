@@ -1,6 +1,7 @@
 const allTasksContainer=document.getElementsByClassName('tasks')[0]
 const body=document.getElementsByTagName('body')[0]
 const user=window.localStorage.getItem('user')
+const root=window.localStorage.getItem('root')
 const username=JSON.parse(user).username
 const first=document.getElementsByClassName('taskContainer')[0]
 const backend=window.localStorage.getItem('backend')
