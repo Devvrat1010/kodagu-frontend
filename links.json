@@ -1,4 +1,4 @@
 {
     "backend":"http://localhost:3000/",
-    "root":"/frontend/"
+    "root":"/"
 }
