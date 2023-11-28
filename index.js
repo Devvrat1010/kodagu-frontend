@@ -72,7 +72,7 @@ var heroPage = document.querySelector('#heroPage');
 heroPage.onmousemove = (event) => {
     var x = (event.clientX - heroPage.offsetLeft) * 100 / heroPage.offsetWidth  + "%";
     var y = (event.clientY - heroPage.offsetTop) * 100 / heroPage.offsetHeight + "%";
-    mouseTracker.style.transition = "0.3s";
+    mouseTracker.style.transition = "0.1s";
     mouseTracker.style.left = x;
     mouseTracker.style.top = y;
 }
