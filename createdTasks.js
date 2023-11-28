@@ -115,10 +115,9 @@ const createFrontendOfTask=(task)=>{
         taskRemoved(e)
     })
 
+    cardStatus.appendChild(statusDone)
+    cardStatus.appendChild(statusDelete)
 
-    cardStatus.appendChild(statusQueue)
-    cardStatus.appendChild(statusNeutral)
-    cardStatus.appendChild(statusUrgent)
     taskContainer.appendChild(cardStatus)
     cardStatus.style.display="none"
     editCard.addEventListener('click',()=>{

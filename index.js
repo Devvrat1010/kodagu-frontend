@@ -9,6 +9,7 @@ fetch('./links.json').then((response)=>{
 })
 
 const backend=window.localStorage.getItem('backend')
+const root=window.localStorage.getItem('root')
 const message=document.getElementsByClassName('message')[0]
 
 const notLoggedIn=()=>{

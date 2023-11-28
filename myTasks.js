@@ -4,6 +4,7 @@ const user=window.localStorage.getItem('user')
 const username=JSON.parse(user).username
 console.log(username,"username")
 const backend=window.localStorage.getItem('backend')
+const root=window.localStorage.getItem('root')
 const first=document.getElementsByClassName('taskContainer')[0]
 
 const taskCompleted=(e)=>{
