@@ -9,7 +9,7 @@ const first=document.getElementsByClassName('taskContainer')[0]
 const taskCompleted=(e)=>{
     const taskId=e.target.parentElement.parentElement.children[3]
     fetch(backend+"api/updateTask/"+taskId.innerText,{
-        method:"put",
+        method:"PUT",
         headers:{
             'Content-Type':'application/json'
         },
@@ -40,6 +40,7 @@ const taskRemoved=(e)=>{
     })
     window.location.href=root+"myTasks.html"
 }
+
 const getTasks=async ()=>{
     const tasks=await fetch(backend+'api/getAllTasks/'+username)
     const data=await tasks.json()

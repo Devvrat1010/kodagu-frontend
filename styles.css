@@ -50,7 +50,7 @@ a{
 }
 .cardStatus{
     justify-items: flex-end;
-    background-color: #ffffff;
+    background-color: #c5c5c5;
     position: absolute;
     padding: 2px;
     border-radius: 5px;

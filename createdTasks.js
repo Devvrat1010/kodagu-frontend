@@ -9,7 +9,7 @@ const backend=window.localStorage.getItem('backend')
 const taskCompleted=(e)=>{
     const taskId=e.target.parentElement.parentElement.children[3]
     fetch(backend+"api/updateTask/"+taskId.innerText,{
-        method:"put",
+        method:"PUT",
         headers:{
             'Content-Type':'application/json'
         },
@@ -38,8 +38,9 @@ const taskRemoved=(e)=>{
             return res.json()
         }
     })
-    window.location.href=root+"myTasks.html"
+    window.location.href=root+"createdTasks.html"
 }
+
 const getTasks=async ()=>{
     const tasks=await fetch(backend+'api/createdTask/'+username)
     const data=await tasks.json()
@@ -69,7 +70,7 @@ const createFrontendOfTask=(task)=>{
 
     const dueDate=document.createElement('div')
     dueDate.classList.add('taskDueDate')
-    
+
     if (task.completed===false){
         dueDate.innerText="Due on : " + task.dueDate.slice(0,10).split('-').reverse().join('-')
     }
@@ -86,19 +87,20 @@ const createFrontendOfTask=(task)=>{
     taskId.classList.add('taskId')
     taskId.innerText=task._id
     taskId.style.display="none"   
-
+    
     const taskAssignee=document.createElement('span')
     taskAssignee.classList.add('taskAssignee')
     taskAssignee.innerText="-"+task.username
-
+    
     description.appendChild(taskAssignee)
     
     taskCardFooter.appendChild(editCard)
     taskCardFooter.appendChild(dueDate)
-
+    
     taskContainer.appendChild(title)
     taskContainer.appendChild(description)
     taskContainer.appendChild(taskCardFooter)
+    taskContainer.appendChild(taskId)
 
     allTasksContainer.appendChild(taskContainer)
 
