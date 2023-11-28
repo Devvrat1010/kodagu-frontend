@@ -74,7 +74,12 @@ const createFrontendOfTask=(task)=>{
     const editCard=document.createElement('div')
     editCard.classList.add('taskEditButton')
     editCard.innerText="Edit"
-    
+
+    const taskId=document.createElement('div')
+    taskId.classList.add('taskId')
+    taskId.innerText=task._id
+    taskId.style.display="none"   
+     
     const taskAssignee=document.createElement('span')
     taskAssignee.classList.add('taskAssignee')
     taskAssignee.innerText="-"+task.username
