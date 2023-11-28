@@ -1,9 +1,10 @@
 const allTasksContainer=document.getElementsByClassName('tasks')[0]
 const body=document.getElementsByTagName('body')[0]
-// const editCard=document.getElementsByClassName('taskEditButton')[0]
 const user=window.localStorage.getItem('user')
 const username=JSON.parse(user).username
 const first=document.getElementsByClassName('taskContainer')[0]
+const backend=window.localStorage.getItem('backend')
+
 const taskCompleted=(e)=>{
     console.log(e.target,"clicked completed")
     const taskId=e.target.parentElement.parentElement.children[3]
@@ -44,7 +45,7 @@ const taskRemoved=(e)=>{
 }
 const getTasks=async ()=>{
     console.log("tasksStarted")
-    const tasks=await fetch('http://localhost:3000/api/createdTask/'+username)
+    const tasks=await fetch(backend+'api/createdTask/'+username)
     const data=await tasks.json()
     iterateOverAllTasks(data.message)
     console.log(data.message,"ended")

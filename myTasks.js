@@ -1,6 +1,5 @@
 const allTasksContainer=document.getElementsByClassName('tasks')[0]
 const body=document.getElementsByTagName('body')[0]
-
 const user=window.localStorage.getItem('user')
 const username=JSON.parse(user).username
 console.log(username,"username")
@@ -47,7 +46,7 @@ const taskRemoved=(e)=>{
 }
 const getTasks=async ()=>{
     console.log("tasksStarted")
-    const tasks=await fetch('http://localhost:3000/api/getAllTasks/'+username)
+    const tasks=await fetch(backend+'api/getAllTasks/'+username)
     const data=await tasks.json()
     iterateOverAllTasks(data)
     console.log(data,"ended")
