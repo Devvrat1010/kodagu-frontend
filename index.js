@@ -29,6 +29,7 @@ const loggedIn=(username)=>{
     })
     const signUp=document.getElementsByClassName('signup')[0]
     signUp.innerText=username
+    signUp.parentElement.href="/"
 }
 
 const getUser=async ()=>{
@@ -67,16 +68,7 @@ const getUser=async ()=>{
     }
 }
 getUser()
-// var eyeBall = document.querySelector('#eyeBall');
 
-// document.onmousemove = (event) => {
-//     var x = event.clientX * 100 / window.innerWidth + "%";
-//     var y = event.clientY * 100 / window.innerHeight + "%";
-    
-//     eyeBall.style.transition = "0s";
-//     eyeBall.style.left = x;
-//     eyeBall.style.top = y;
-// }
 var eyeBall = document.querySelector('#eyeBall');
 var container = document.querySelector('#container');
 
