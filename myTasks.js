@@ -2,15 +2,12 @@ const allTasksContainer=document.getElementsByClassName('tasks')[0]
 const body=document.getElementsByTagName('body')[0]
 const user=window.localStorage.getItem('user')
 const username=JSON.parse(user).username
-console.log(username,"username")
 const backend=window.localStorage.getItem('backend')
 const root=window.localStorage.getItem('root')
 const first=document.getElementsByClassName('taskContainer')[0]
 
 const taskCompleted=(e)=>{
-    console.log(e.target,"clicked completed")
     const taskId=e.target.parentElement.parentElement.children[3]
-    console.log(taskId.innerText,"taskId")
     fetch(backend+"api/updateTask/"+taskId.innerText,{
         method:"put",
         headers:{
@@ -28,9 +25,7 @@ const taskCompleted=(e)=>{
 }
 
 const taskRemoved=(e)=>{
-    console.log(e.target,"clicked deleting")
     const taskId=e.target.parentElement.parentElement.children[3]
-    console.log(taskId.innerText,"taskId")  
     fetch(backend+"api/deleteTask",{
         method:"POST",
         headers:{
@@ -46,11 +41,9 @@ const taskRemoved=(e)=>{
     window.location.href=root+"myTasks.html"
 }
 const getTasks=async ()=>{
-    console.log("tasksStarted")
     const tasks=await fetch(backend+'api/getAllTasks/'+username)
     const data=await tasks.json()
     iterateOverAllTasks(data)
-    console.log(data,"ended")
 }
 
 const iterateOverAllTasks=async(data)=>{
@@ -66,7 +59,6 @@ const createFrontendOfTask=(task)=>{
     const title=document.createElement('div')
     title.classList.add('taskTitle')
     title.innerText=task.title
-    // console.log(task.title)
     
     const description=document.createElement('div')
     description.classList.add('taskDescription')
