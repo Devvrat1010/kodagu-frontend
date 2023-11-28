@@ -69,7 +69,14 @@ const createFrontendOfTask=(task)=>{
 
     const dueDate=document.createElement('div')
     dueDate.classList.add('taskDueDate')
-    dueDate.innerText="Due on : " + task.dueDate.slice(0,10).split('-').reverse().join('-')
+    
+    if (task.completed===false){
+        dueDate.innerText="Due on : " + task.dueDate.slice(0,10).split('-').reverse().join('-')
+    }
+    else{
+        dueDate.innerText="Completed"
+        dueDate.style.color="green"
+    }
 
     const editCard=document.createElement('div')
     editCard.classList.add('taskEditButton')
@@ -79,7 +86,7 @@ const createFrontendOfTask=(task)=>{
     taskId.classList.add('taskId')
     taskId.innerText=task._id
     taskId.style.display="none"   
-     
+
     const taskAssignee=document.createElement('span')
     taskAssignee.classList.add('taskAssignee')
     taskAssignee.innerText="-"+task.username
